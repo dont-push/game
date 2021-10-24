@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TuiMarkerIconModule } from "@taiga-ui/kit";
+import { GameBoardModule } from "./game-board/game-board.module";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { TuiMarkerIconModule } from "@taiga-ui/kit";
     TuiDialogModule,
     TuiNotificationsModule,
     TuiMarkerIconModule,
+    GameBoardModule,
 ],
   providers: [],
   bootstrap: [AppComponent]
