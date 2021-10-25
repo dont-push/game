@@ -1,4 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
+import { TuiSvgService } from '@taiga-ui/core';
+import { TuiMarkerIconModeT } from '@taiga-ui/kit';
+import { Cell } from 'src/app/core/interfaces';
 
 @Component({
   selector: 'app-cell',
@@ -6,11 +9,22 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./cell.component.scss']
 })
 export class CellComponent implements OnInit {
-  @Input() cell = 0;
+  @Input() cell: Cell = null;
 
-  constructor() { }
+  public mode: TuiMarkerIconModeT = null;
+
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }
 
+  public active() {
+    if (this.mode) {
+      this.mode = null;
+    } else {
+      this.mode = 'primary';
+    }
+  }
 }

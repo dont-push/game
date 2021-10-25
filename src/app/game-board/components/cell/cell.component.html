@@ -1,5 +1,10 @@
-<tui-marker-icon
-  size="xs"
-  src="tuiIconBellLarge"
-></tui-marker-icon>
-{{ cell }}
+<div
+  class="tui-col_4"
+  (click)="active()"
+>
+  <tui-marker-icon
+    size="s"
+    [mode]="mode"
+    [src]="cell?.icon"
+  ></tui-marker-icon>
+</div>

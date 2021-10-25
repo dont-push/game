@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ICON_LIST } from '@static';
+import { Cell } from 'src/app/core/interfaces';
+import { BoardStateService } from 'src/app/core/services/board-state/board-state.service';
 
 @Component({
   selector: 'app-board',
@@ -7,14 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private boardService: BoardStateService
+  ) { }
 
   ngOnInit(): void {
+    this.board = this.boardService.createTable(5,4);
   }
-
-  public board = [
-    [1, 2, 3],
-    [1, 2, 3],
-    [1, 2, 3],
-  ]
+  private icons = ICON_LIST.reverse();
+  public board: Cell[][] = []
 }
