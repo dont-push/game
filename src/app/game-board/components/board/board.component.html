@@ -1,6 +1,11 @@
 <div class="tui-container">
   <app-row
-    *ngFor="let row of board"
+    *ngFor="let row of board$ | async"
     [row]="row"
-  ></app-row>
+  >
+    <app-cell
+      *ngFor="let cell of row"
+      [cell]="cell"
+    ></app-cell>
+  </app-row>
 </div>

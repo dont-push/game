@@ -20,6 +20,9 @@
       "@static": [
         "src/app/static"
       ],
+      "@core/*": [
+        "src/app/core/*"
+      ],
     }
   },
   "angularCompilerOptions": {

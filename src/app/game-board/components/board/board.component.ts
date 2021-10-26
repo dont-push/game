@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ICON_LIST } from '@static';
+import { Observable } from 'rxjs';
 import { Cell } from 'src/app/core/interfaces';
 import { BoardStateService } from 'src/app/core/services/board-state/board-state.service';
 
@@ -15,8 +16,7 @@ export class BoardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.board = this.boardService.createTable(5,4);
   }
-  private icons = ICON_LIST.reverse();
-  public board: Cell[][] = []
+
+  public board$: Observable<Cell[][]> = this.boardService.grid$;;
 }
